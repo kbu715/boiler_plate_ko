@@ -5,7 +5,7 @@ import LandingPage from "./components/views/LandingPage/LandingPage";
 import LoginPage from "./components/views/LoginPage/LoginPage";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import NavbarPage from "./components/views/NavbarPage/NavbarPage";
-
+import Footer from "./components/views/Footer/Footer";
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+    <Footer />
     </>
   );
 }
