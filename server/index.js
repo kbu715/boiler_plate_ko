@@ -10,13 +10,14 @@ const config = require("./config/key");
 
 // 로컬 개발용 기본 cors origin (front 3000)
 
-let cors_origin = [`http://localhost:3000`];
+// let cors_origin = [`http://localhost:3000`];
 app.use(
   cors({
-    origin: cors_origin, // 허락하고자 하는 요청 주소
+    origin: true, // 허락하고자 하는 요청 주소
     credentials: true, // true로 하면 설정한 내용을 response 헤더에 추가 해줍니다.
   })
 );
+
 //application/x-www-form-urlencoded : 이런 데이터 타입을 분석해서 가져올수 있게 한다.
 app.use(bodyParser.urlencoded({ extended: true }));
 //application/json :이것도
@@ -103,7 +104,7 @@ app.get("/api/users/auth", auth, (req, res) => {
   });
 });
 
-app.get("/api/users/logout", auth, (req, res) => {
+app.post("/api/users/logout", auth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err, user) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).send({

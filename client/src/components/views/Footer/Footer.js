@@ -1,5 +1,5 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -30,13 +30,12 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     padding: theme.spacing(3, 2),
-    marginTop: 'auto',
+    // marginTop: 'auto',
     position: 'absolute',
     left: 0,
     bottom: 0,
     width: '100%',
-    textAlign: 'center', 
-    padding: '15px 0',
+    textAlign: 'center',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
   },
